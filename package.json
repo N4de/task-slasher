@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/N4de/task-slasher#readme",
   "dependencies": {
+    "eslint": "^5.6.1",
     "express": "^4.16.3",
     "passport": "^0.4.0",
     "passport-google-oauth20": "^1.0.0"

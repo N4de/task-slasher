@@ -1,15 +1,19 @@
 const express = require('express');
 const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
+const keys = require('./config/keys');
 
 const app = express();
 
 
-// 587078935800-kttmenlro3auc1h6a1rj3e91f16k41d7.apps.googleusercontent.com client ID
 
-// GyBfUISBfqqosXosxt3-CEE4 client secret!!!
-
-passport.use(new GoogleStrategy());
+passport.use(new GoogleStrategy({
+    clientID: keys.googleClientID,
+    clientSecret: keys.googleClientSecret,
+    callbackURL: '/auth/google/callback'
+}, (accessToken) => {
+    console.log(accessToken);
+}));
 
 app.get('/', (req, res) => {
     res.send({ hi: 'there' });

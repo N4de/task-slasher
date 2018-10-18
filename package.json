@@ -1,27 +1,30 @@
 {
-    "name": "task-slasher",
-    "version": "1.0.0",
-    "description": "",
-    "main": "index.js",
-    "scripts": {
-        "start": "node index.js",
-        "dev": "nodemon index.js"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/N4de/task-slasher.git"
-    },
-    "author": "",
-    "license": "ISC",
-    "bugs": {
-        "url": "https://github.com/N4de/task-slasher/issues"
-    },
-    "homepage": "https://github.com/N4de/task-slasher#readme",
-    "dependencies": {
-        "eslint": "^5.6.1",
-        "express": "^4.16.3",
-        "nodemon": "^1.18.4",
-        "passport": "^0.4.0",
-        "passport-google-oauth20": "^1.0.0"
-    }
+  "name": "task-slasher",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/N4de/task-slasher.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/N4de/task-slasher/issues"
+  },
+  "homepage": "https://github.com/N4de/task-slasher#readme",
+  "dependencies": {
+    "eslint": "^5.6.1",
+    "express": "^4.16.3",
+    "nodemon": "^1.18.4",
+    "passport": "^0.4.0",
+    "passport-google-oauth20": "^1.0.0",
+    "pg": "^7.5.0",
+    "pg-hstore": "^2.3.2",
+    "sequelize": "^4.39.1"
+  }
 }

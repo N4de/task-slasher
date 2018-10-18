@@ -1,0 +1,8 @@
+{
+    "indent_size": 4,
+    "brace_style": "end-expand",
+    "css": {
+        "indent_size": 2
+    },
+    "break_chained_methods": true
+}

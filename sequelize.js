@@ -1,5 +1,5 @@
 const Sequelize = require('sequelize');
-const User = require('./user');
+const User = require('./server/models/user');
 const databaseKeys = require('./config/database');
 
 const sequelize = new Sequelize(databaseKeys.databaseName, databaseKeys.databaseUsername, databaseKeys.databasePassword, {
@@ -18,7 +18,8 @@ const sequelize = new Sequelize(databaseKeys.databaseName, databaseKeys.database
 
 sequelize.sync()
     .then(() => User.create({
-        username: 'janedoe',
+        firstName: 'janedoe',
+        lastName: 'doejane',
         id: new Date(1980, 6, 20)
     }))
     .then(jane => {

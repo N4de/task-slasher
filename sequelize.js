@@ -20,7 +20,6 @@ sequelize.sync()
     .then(() => User.create({
         firstName: 'janedoe',
         lastName: 'doejane',
-        id: new Date(1980, 6, 20)
     }))
     .then(jane => {
         console.log(jane.toJSON());

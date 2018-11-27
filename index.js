@@ -1,6 +1,5 @@
 const express = require('express');
 require('./services/passport');
-const { User } = require('./sequelize');
 
 const app = express();
 

@@ -17,10 +17,8 @@ const sequelize = new Sequelize(databaseKeys.databaseName, databaseKeys.database
 });
 
 sequelize.sync()
-    .then(() => User.create({
-        firstName: 'janedoe',
-        lastName: 'doejane',
-    }))
-    .then(jane => {
-        console.log(jane.toJSON());
+    .then(() => {
+        console.log(
+            'seqiesöozez'
+        );
     });

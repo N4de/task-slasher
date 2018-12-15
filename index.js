@@ -1,5 +1,6 @@
 const express = require('express');
 require('./services/passport');
+require('./sequelize');
 
 const app = express();
 

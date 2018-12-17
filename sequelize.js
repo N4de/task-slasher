@@ -1,5 +1,5 @@
 const Sequelize = require('sequelize');
-// const User = require('./server/models/user');
+const db = require('./server/models');
 const databaseKeys = require('./config/database');
 
 const sequelize = new Sequelize(databaseKeys.databaseName, databaseKeys.databaseUsername, databaseKeys.databasePassword, {
@@ -16,20 +16,16 @@ const sequelize = new Sequelize(databaseKeys.databaseName, databaseKeys.database
     },
 });
 
-const User = sequelize.define("testdude", {
-    name: Sequelize.STRING,
-    description: Sequelize.TEXT
-});
 
 sequelize.sync()
     .then(() => {
         console.log('things have been synced yes');
-        return User.create({
-            name: 'John',
-            description: 'cool dude'
+        return db.user.create({
+            googleId: 'John',
+        })
+        .then(() => {
+            db.user.findAll().then(users => {
+                console.log(users);
+              });
         });
     });
-
-    User.findAll().then(users => {
-        console.log(users);
-      });

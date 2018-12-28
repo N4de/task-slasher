@@ -18,14 +18,7 @@ const sequelize = new Sequelize(databaseKeys.databaseName, databaseKeys.database
 
 
 sequelize.sync()
-    .then(() => {
+    .then(()=> {
         console.log('things have been synced yes');
-        return db.user.create({
-            googleId: 'John',
-        })
-        .then(() => {
-            db.user.findAll().then(users => {
-                console.log(users);
-              });
-        });
     });
+

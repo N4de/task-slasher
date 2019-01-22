@@ -4,17 +4,23 @@ const GoogleStrategy = require('passport-google-oauth20')
 const keys = require('../config/keys');
 const User = require('../server/models').user;
 
-// passport.serializeUser((user, done) => {
-//     console.log(user);
-//     done(null, user.id);
-// });
+passport.serializeUser((user, done) => {
+    console.log('SERIALIZING USER');
+    console.log(user);
+    console.log(user.id);
+    done(null, user.id);
+});
 
-// passport.deserializeUser((id, done) => {
-//     User.findById(id)
-//         .then((user) => {
-//             done(null, user);
-//         });
-// });
+passport.deserializeUser((id, done) => {
+    console.log('DESERIALIZING USER');
+    console.log(id);
+    User.findByPk(id)
+        .then((user) => {
+            console.log('USER FOUND');
+            console.log(user);
+            done(null, user);
+        });
+});
 
 passport.use(new GoogleStrategy({
     clientID: keys.googleClientID,

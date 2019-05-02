@@ -3,7 +3,6 @@ const cookieSession = require('cookie-session');
 const keys = require('./config/keys');
 const passport = require('passport');
 require('./sequelize');
-require('./services/passport');
 
 const app = express();
 
@@ -13,9 +12,6 @@ app.use(
         keys: [keys.cookieKey]
     })
 );
-
-app.use(passport.initialize());
-app.use(passport.session());
 
 
 require('./routes/authRoutes')(app);

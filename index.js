@@ -1,7 +1,6 @@
 const express = require('express');
 const cookieSession = require('cookie-session');
 const keys = require('./config/keys');
-const passport = require('passport');
 require('./sequelize');
 
 const app = express();

@@ -2,7 +2,7 @@ const Sequelize = require('sequelize');
 const db = require('./server/models');
 const databaseKeys = require('./config/database');
 
-const sequelize = new Sequelize(databaseKeys.databaseName, databaseKeys.databaseUsername, databaseKeys.databasePassword, {
+const sequelize = new Sequelize(databaseKeys.databaseName, databaseKeys.databaseUsername, databaseKeys.databasePassword,{
     host: 'localhost',
     dialect: 'postgres',
     port: 5432,
